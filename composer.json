@@ -1,0 +1,16 @@
+{
+    "name": "amaia/php-to-do-list",
+    "autoload": {
+        "psr-4": {
+            "Amaia\\PhpToDoList\\": "src/"
+        }
+    },
+    "authors":[
+        {
+            "name": "Amaia A.",
+            "email": "abaroa.amaia@gmail.com"
+        }
+    ],
+    
+    "require": {}
+}
