@@ -12,14 +12,14 @@ require_once "../src/config.php";
 </head>
 <body>
     <h1>TO-DO LIST</h1>
-    <h2>Create a new TO-DO List</h2>
+    <h2>Create a new task:</h2>
     <form method="POST" action="../src/add_task.php">
         <label>What´s up, </label>
         <input type="text" name="user" required>
         <br><br>
 
         <label>What´s on your list?</label>
-        <input type="text" name="tittle" required>
+        <input type="text" name="title" required>
         <br><br>
 
         <label>Give a short description:</label>
@@ -47,20 +47,25 @@ require_once "../src/config.php";
         </select>
         <br><br>
 
-        <label>Completed:</label>
-        <input type="checkbox" name="completed">
-        <br><br>
+        <!-- <label>Completed:</label>
+        <input type="radio" name="completed">
+        <br><br> -->
 
         <label>Created on:</label>
         <input type="date" name="created_date">
         <br><br>
-
+<!-- 
         <label>Finished on:</label>
         <input type="date" name="finished_date">
-        <br><br>
+        <br><br> -->
 
 
         <input type="submit" value="ADD TASK">
     </form>
+
+    <h2>TO DO LIST:</h2>
+    <section>
+        <?php require_once "../src/get_task.php"; ?>
+    </section>
 </body>
 </html>

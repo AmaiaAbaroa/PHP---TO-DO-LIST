@@ -1,9 +1,9 @@
 <?php 
 
 class Task {
-    private $task_id;
+    private $id_task;
     private $user;
-    private $tittle;
+    private $title;
     private $description;
     private $category;
     private $priority;
@@ -12,10 +12,10 @@ class Task {
     private $finished_date;
 
 
-public function __construct($task_id, $user, $tittle, $description, $category, $priority, $completed, $created_date, $finished_date){
-    $this->task_id = $task_id;
+public function __construct($id_task, $user, $title, $description, $category, $priority, $completed, $created_date, $finished_date){
+    $this->id_task = $id_task;
     $this->user = $user;
-    $this->tittle = $tittle;
+    $this->title = $title;
     $this->description = $description;
     $this->category = $category;
     $this->priority = $priority;
@@ -24,6 +24,34 @@ public function __construct($task_id, $user, $tittle, $description, $category, $
     $this->finished_date = $finished_date;
 }
 
+// Métodos para obtener los datos de la tarea
+public function getIdTask() {
+    return $this->id_task;
+}
+public function gettitle() {
+    return $this->title;
+}
+public function getDescription() {
+    return $this->description;
+}
+public function getUser() {
+    return $this->user;
+}
+public function getCategory() {
+    return $this->category;
+}
+public function getPriority() {
+    return $this->priority;
+}
+public function getCompleted() {
+    return $this->completed;
+}
+public function getCreatedDate() {
+    return $this->created_date;
+}
+public function getFinishedDate() {
+    return $this->finished_date;
+}
 
 //ESTA FUNCION A TASKCONTROLER.PHP
 // listar todas las tareas
@@ -39,9 +67,9 @@ public static function getAllTasks(){
     if ($result->num_rows > 0) {
         while ($row = $result->fetch_assoc()) {
             $task = new Task(
-                $row['task_id'],
+                $row['id_task'],
                 $row['user'],
-                $row['tittle'],
+                $row['title'],
                 $row['description'],
                 $row['category'],
                 $row['priority'],
@@ -49,7 +77,7 @@ public static function getAllTasks(){
                 $row['created_date'],
                 $row['finished_date']
             );
-            $tasks[] = $tasks;
+            $tasks[] = $task;
         }
     }
 
