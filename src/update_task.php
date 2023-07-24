@@ -26,3 +26,5 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['task_id'])) {
     // Cerrar la conexión
     $conn->close();
 }
+
+?>

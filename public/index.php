@@ -8,6 +8,7 @@ require_once "../src/config.php";
 <!DOCTYPE html>
 <html>
 <head>
+    <link rel="stylesheet" href="../public/styles.css">
     <title>TO-DO List</title>
 </head>
 <body>
